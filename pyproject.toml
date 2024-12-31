@@ -1,6 +1,10 @@
+[build-system]
+requires = ["hatchling>=1.27.0"]
+build-backend = "hatchling.build"
+
 [project]
-name = "st-template"
-version = "0.1.0"
+name = "sttemplate"
+dynamic = ["version"]
 description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -23,3 +27,35 @@ python_version = "3.10"
 warn_return_any = true
 warn_unused_configs = true
 disallow_untyped_defs = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = [
+    "--verbose",
+]
+
+[tool.hatch.build]
+include = [
+    "src/*.py",
+]
+exclude = [
+    "tests/*",
+]
+
+
+
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "/src",
+    "LICENSE",
+]
+
+[tool.hatch.version]
+path = "src/__init__.py"
+
+[tool.hatch.metadata]
+allow-direct-references = true

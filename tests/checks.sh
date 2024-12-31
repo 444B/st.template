@@ -346,9 +346,9 @@ else
     # Tests with coverage
     if [ "$RUN_TEST" = true ]; then
         if [ "$CI_MODE" = true ]; then
-            run_check "Pytest with coverage" "pytest ../ --cov=${SRC_DIR} --cov-report=xml --cov-report=term-missing:skip-covered" || true
+            run_check "Pytest with coverage" "pytest ../ --cov=${SRC_DIR}  || true
         else
-            run_check "Pytest with coverage" "pytest ../ --cov=${SRC_DIR} --cov-report=term-missing:skip-covered" || true
+            run_check "Pytest with coverage" "pytest ../ --cov=${SRC_DIR}  || true
         fi
     fi
 fi

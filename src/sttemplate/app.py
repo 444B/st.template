@@ -1,7 +1,7 @@
 # import streamlit as st
 
 # def main():
-#     st.title("st-template")
+#     st.title("sttemplate")
 
 
 # if __name__ == "__main__":
@@ -24,3 +24,16 @@ print(show_count(99, "bird"))
 print(show_count(1, "bird"))
 
 print(show_count(0, "bird"))
+
+
+def add_numbers(a: float, b: float) -> float:
+    """Add two numbers and return their sum.
+
+    Args:
+        a: First number
+        b: Second number
+
+    Returns:
+        Sum of a and b
+    """
+    return a + b
