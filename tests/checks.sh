@@ -13,7 +13,7 @@ set -uo pipefail
 
 # Global variables
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-SRC_DIR="${SCRIPT_DIR}/../"
+SRC_DIR="${SCRIPT_DIR}/../src/"
 VENV_DIR="${SCRIPT_DIR}/.venv"
 REQUIREMENTS_FILE="${SCRIPT_DIR}/../pyproject.toml"
 LOG_DIR="${SCRIPT_DIR}/logs"
