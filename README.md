@@ -23,6 +23,7 @@ Here is the
 
 This is the document you are reading at this very moment. It is essential to 
 sharing what your project is about and how to use it.  
+
 --- 
 
 ## ├── pyproject.toml
@@ -30,11 +31,13 @@ sharing what your project is about and how to use it.
 This is a crucial part of your project and can be used for managing
 dependancies, configurations, and if you deploy to PyPi then it is the info on
 the sidepanels.  
+
 --- 
 
 ## ├── src
 
 This is the top level folder where your actual code will be.  
+
 --- 
 
 ## │   └── sttemplate
@@ -42,6 +45,7 @@ This is the top level folder where your actual code will be.
 This sub level folder is the name of your project and package and organizes your
 code even further.  
 You would have one of these for each module you write but you need at least 1.  
+
 --- 
 
 ## │       ├── __init__.py
@@ -50,6 +54,7 @@ This very important file indicates to other python files that it organizes your
 code into a module and can be imported with `import sttemplate`.  
 Inside, you would define which functions and which files specifically are
 availible  
+
 --- 
 
 ## │       └── app.py
@@ -57,6 +62,7 @@ availible
 Here is where the magic happens. Your Million dollar idea, the next IYKYKaaS.
 This is why you get paid the big bucks but as you might be observing that quite
 alot goes on to make that magic code availible.  
+
 --- 
 
 ## ├── tests
@@ -66,6 +72,7 @@ scale and complexity. `print()` and `logging.info` will only take you so far
 Especially as you add features and make unpredictable changes, you will use code
 here to test the `src/` code for correct behaviour.  
 They also help our code be more readable and maintainable.  
+
 --- 
 
 ## │   ├── checks.sh
@@ -78,12 +85,14 @@ used for testing:
 - mypy = type checking  
 - bandit = basic security checks  
 - pytest = unit testing  
+
 --- 
 
 ## │   └── test_calc.py
 
 This is just an example of a pytest file that demonstrates how to do a unit test
 and also verifies that the imports set out in __init__.py work as intended.  
+
 --- 
 
 ## └── uv.lock
@@ -93,4 +102,5 @@ management. [UV](https://docs.astral.sh/uv/) is a tool for managing all these
 dependencies and in my opinion it does a fair job of it. 
 There are many dependency managment tools such as pip, pipenv, poetry, tox or
 even just rawdogging it with `python -m`. Try them out and find what works best for you
+
 ---
