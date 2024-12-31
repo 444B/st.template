@@ -59,6 +59,7 @@ trap 'error_handler $? ${LINENO} "$BASH_COMMAND"' ERR
 show_help() {
     cat << EOF
 Usage: ./run_checks.sh [OPTIONS]
+Note: Run this from within the tests directory
 
 A comprehensive code quality check script that runs various formatters,
 linters, and tests on your Python codebase.
