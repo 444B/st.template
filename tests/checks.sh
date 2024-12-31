@@ -283,7 +283,7 @@ run_parallel_checks() {
         ["Black formatting"]="black ${SRC_DIR} $([ "$FIX_MODE" = true ] && echo '--quiet' || echo '--check --verbose')"
         ["Import sorting"]="isort ${SRC_DIR} $([ "$FIX_MODE" = true ] && echo '--quiet' || echo '--check-only --verbose --diff')"
         ["Flake8 linting"]="flake8 ${SRC_DIR}"
-        ["MyPy type checking"]="mypy ${SRC_DIR} --config-file ../mypy.ini"
+        ["MyPy type checking"]="mypy ${SRC_DIR} --config-file ../pyproject.toml"
         ["Bandit security check"]="bandit -r ${SRC_DIR}"
     )
     
@@ -335,7 +335,7 @@ else
     
     # Type checks
     if [ "$RUN_TYPE" = true ]; then
-        run_check "MyPy type checking" "mypy ${SRC_DIR} --config-file ../mypy.ini" || true
+        run_check "MyPy type checking" "mypy ${SRC_DIR} --config-file ../pyproject.toml" || true
     fi
     
     # Security checks
