@@ -75,7 +75,6 @@ Options:
     --no-type             Skip type checks
     --no-test             Skip tests
     --no-security         Skip security checks
-    --ci                  Run in CI mode (implies --skip-venv)
 
 Examples:
     ./run_checks.sh                    # Run all checks in check-only mode
@@ -86,7 +85,6 @@ Examples:
 Environment Variables:
     PYTHON_VERSION        Python version to use (default: 3.10)
     COVERAGE_THRESHOLD    Minimum required coverage percentage (default: 80)
-    CI                   Set to 'true' when running in CI environment
 
 EOF
     exit 0
@@ -102,7 +100,6 @@ RUN_LINT=true
 RUN_TYPE=true
 RUN_TEST=true
 RUN_SECURITY=true
-CI_MODE=false
 
 while (( "$#" )); do
     case "$1" in
@@ -143,11 +140,6 @@ while (( "$#" )); do
             ;;
         --no-security)
             RUN_SECURITY=false
-            shift
-            ;;
-        --ci)
-            CI_MODE=true
-            SKIP_VENV=true
             shift
             ;;
         *)
@@ -304,7 +296,6 @@ run_parallel_checks() {
     echo "# Code Quality Check Results"
     echo "Run on: $(date)"
     echo "Mode: $([ "$FIX_MODE" = true ] && echo 'Fix' || echo 'Check')"
-    echo "Environment: $([ "$CI_MODE" = true ] && echo 'CI' || echo 'Local')"
     echo ""
     echo '```text'
 } > "$RESULTS_FILE"
@@ -346,11 +337,8 @@ else
     
     # Tests with coverage
     if [ "$RUN_TEST" = true ]; then
-        if [ "$CI_MODE" = true ]; then
-            run_check "Pytest with coverage" "pytest ../ --cov=${SRC_DIR}  || true
-        else
-            run_check "Pytest with coverage" "pytest ../ --cov=${SRC_DIR}  || true
-        fi
+
+        run_check "Pytest with coverage" "pytest ../ "  || true
     fi
 fi
 
@@ -378,13 +366,5 @@ if [ -s "$ERROR_LOG" ]; then
     } >> "$RESULTS_FILE"
 fi
 
-# # Optional: Open the results file
-# if [ "$CI_MODE" = false ]; then
-#     if command -v code >/dev/null 2>&1; then
-#         code "$RESULTS_FILE" "$ERROR_LOG"
-#     elif command -v open >/dev/null 2>&1; then
-#         open "$RESULTS_FILE"
-#     fi
-# fi
 
 exit $GLOBAL_ERROR
