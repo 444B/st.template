@@ -11,6 +11,7 @@
 def hello():
     print("Hello world")
 
+
 def show_count(count, word) -> str:
     if count == 1:
         return f"1 {word}"

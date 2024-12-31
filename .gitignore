@@ -5,6 +5,8 @@ analytics.toml
 # test specific
 test/logs/*
 test/logs
+test_results_*
+errors_*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
