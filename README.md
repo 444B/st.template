@@ -8,12 +8,12 @@ This summarizes alot of what I had to learn to develop and maintain [Streamlit A
 
 >[!TIP]
 > How to use this repo
-1. make a [fork](https://github.com/444B/sttemplate/fork)
-1. clone it to a workstation
-1. start adding your code into the src/ folder
-1. add your dependencies (I will add a guide to this if there is interest, just open an issue)
-1. test it by writing unit test in the tests/ folder and running checks.sh
-1. set up Github action CI/CD and deploy to Pypi!
+> 1. make a [fork](https://github.com/444B/sttemplate/fork)
+> 1. clone it to a workstation
+> 1. start adding your code into the src/ folder
+> 1. add your dependencies (I will add a guide to this if there is interest, just open an issue)
+> 1. test it by writing unit test in the tests/ folder and running checks.sh
+> 1. set up Github action CI/CD and deploy to Pypi!
 
 Here is the layout and a description below for each section
   
