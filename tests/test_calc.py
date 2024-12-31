@@ -1,10 +1,5 @@
 import pytest
-from calc import add_numbers
-
-
-# from ../src/app.py import add_numbers
-
-# print(add_numbers(2+3))
+from sttemplate import add_numbers
 
 
 def test_add_numbers():

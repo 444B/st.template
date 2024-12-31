@@ -377,13 +377,13 @@ if [ -s "$ERROR_LOG" ]; then
     } >> "$RESULTS_FILE"
 fi
 
-# Optional: Open the results file
-if [ "$CI_MODE" = false ]; then
-    if command -v code >/dev/null 2>&1; then
-        code "$RESULTS_FILE" "$ERROR_LOG"
-    elif command -v open >/dev/null 2>&1; then
-        open "$RESULTS_FILE"
-    fi
-fi
+# # Optional: Open the results file
+# if [ "$CI_MODE" = false ]; then
+#     if command -v code >/dev/null 2>&1; then
+#         code "$RESULTS_FILE" "$ERROR_LOG"
+#     elif command -v open >/dev/null 2>&1; then
+#         open "$RESULTS_FILE"
+#     fi
+# fi
 
 exit $GLOBAL_ERROR

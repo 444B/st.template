@@ -39,13 +39,14 @@ addopts = [
 
 [tool.hatch.build]
 include = [
-    "src/*.py",
+    "src/**/*.py",
 ]
 exclude = [
     "tests/*",
 ]
 
-
+[tool.hatch.build.targets.wheel]
+packages = ["src/sttemplate"]
 
 
 [tool.hatch.build.targets.sdist]
@@ -55,7 +56,7 @@ include = [
 ]
 
 [tool.hatch.version]
-path = "src/__init__.py"
+path = "src/sttemplate/__init__.py"
 
 [tool.hatch.metadata]
 allow-direct-references = true
