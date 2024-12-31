@@ -1,22 +1,32 @@
 # sttemplate
-A template repo for streamlit projects and publishing them on PyPi  
+A minimal viable template repo for streamlit projects and publishing them on
+PyPi  
 
-The repo comes with everything you would need to get started making python packages.  
+The repo comes with everything you would need to get started making scalable,
+maintainable python ackages.  
 This summarizes alot of what I had to learn to develop and maintain [Streamlit Analytics2](https://github.com/444B/streamlit-analytics2)
 
-Here is the  
+>[!TIP]
+> How to use this repo
+1. make a [fork](https://github.com/444B/sttemplate/fork)
+1. clone it to a workstation
+1. start adding your code into the src/ folder
+1. add your dependencies (I will add a guide to this if there is interest, just open an issue)
+1. test it by writing unit test in the tests/ folder and running checks.sh
+1. set up Github action CI/CD and deploy to Pypi!
+
+Here is the layout and a description below for each section
   
-├── README.md   
-├── pyproject.toml  
-├── src  
-│   └── sttemplate  
-│       ├── __init__.py  
-│       └── app.py  
-├── tests  
-│   ├── checks.sh  
-│   ├── logs  
-│   └── test_calc.py  
-└── uv.lock  
+├── [README.md](https://github.com/444B/sttemplate/blob/main/README.md#-readmemd)   
+├── [pyproject.toml](https://github.com/444B/sttemplate/blob/main/README.md#-pyprojecttoml)  
+├── [src](https://github.com/444B/sttemplate/blob/main/README.md#-src)  
+│   └── [sttemplate](https://github.com/444B/sttemplate/blob/main/README.md#----sttemplate)  
+│       ├── [__init__.py](https://github.com/444B/sttemplate/blob/main/README.md#--------initpy)  
+│       └── [app.py](https://github.com/444B/sttemplate/blob/main/README.md#--------apppy)  
+├── [tests](https://github.com/444B/sttemplate/blob/main/README.md#-tests)  
+│   ├── [checks.sh](https://github.com/444B/sttemplate/blob/main/README.md#----checkssh)  
+│   └── [test_calc.py](https://github.com/444B/sttemplate/blob/main/README.md#----test_calcpy)  
+└── [uv.lock](https://github.com/444B/sttemplate/blob/main/README.md#-uvlock)  
 
 ---  
 ## ├── README.md
